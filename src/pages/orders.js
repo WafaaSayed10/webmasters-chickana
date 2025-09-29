@@ -42,7 +42,7 @@ export default function Orders(){
                                 <li>
                                     {item.name} <br/> Quantity: {item.quantity} <br/> Price: {item.newPrice}.00 
                                 </li>
-                                {Object.entries(item.selectedOptions).map(([groupName, { choice, price }])=><div key={groupName} className='flex gap-1'>
+                                {Object.entries(item.selectedOptions).map(([groupName, { choice, price }],index)=><div key={index} className='flex gap-1'>
                                     <h4 className='text-[12px] text-[#6d6461]'>{groupName}</h4>
                                     <p className='text-[12px] text-[#372b27]'>{choice}{ price !== "0.00" &&<span className='ml-[5px]'>({price})</span>}</p>
                                 </div>)}
