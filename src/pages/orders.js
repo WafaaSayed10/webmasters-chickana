@@ -28,8 +28,8 @@ export default function Orders(){
             <div className="md:w-[85%] m-auto px-[5%] md:px-[2.5%] py-[40px] text-[14px] text-[#372b27]">
                 {orders.length==0?
                     <div className='text-center'><h2 className='font-semibold mb-2 text-[22px]'>No orders yet</h2><p>When you place your first order, it will appear here.</p></div>
-                    :<><h1 className='text-[30px] font-semibold mb-5'>My Orders</h1><div className='grid gap-[40px] grid-cols-1 lg:grid-cols-2'>{orders.map((order)=>
-                    <div className='border-b shadow-md p-2 flex gap-[80px]'>
+                    :<><h1 className='text-[30px] font-semibold mb-5'>My Orders</h1><div className='grid gap-[40px] grid-cols-1 lg:grid-cols-2'>{orders.map((order, index)=>
+                    <div key={index} className='border-b shadow-md p-2 flex gap-[80px]'>
                         <div>
                             <h2 className="font-bold mb-1 text-[15px]">Info</h2>
                             <h2>Name: {order.customerInfo?.fname}</h2>
