@@ -2,7 +2,7 @@ import Head from "next/head"
 import Link from "next/link"
 import { useState } from "react"
 import { auth, db } from '../utils/firebase';
-import { createUserWithEmailAndPassword, updateProfile, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { createUserWithEmailAndPassword, updateProfile, GoogleAuthProvider } from 'firebase/auth';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
 import toast from "react-hot-toast";
 import { useRouter } from "next/router";
@@ -101,7 +101,7 @@ export default function Register(){
         <main>
             <div className="bg-gray-100 p-[30px] sm:p-[80px]">
                 <form onSubmit={handleSubmit} className="max-w-[400px] sm:w-[400px] m-auto bg-[#fff] px-[25px] py-[15px] flex flex-col gap-[15px] rounded-[5px] shadow-sm">
-                    <h1 className="mb-[10px] text-[25px] text-[#372b27] leading-none">Register<span className="text-[16px] ml-[5px]">It's easy and always will be.</span></h1>
+                    <h1 className="mb-[10px] text-[25px] text-[#372b27] leading-none">Register<span className="text-[16px] ml-[5px]">It&apos;s easy and always will be.</span></h1>
                     <input onChange={handleChange} value={form.phone} type="tel" name="phone" placeholder="Telephone" autoComplete="telephone" className="p-[10px] border rounded-[5px] w-full" />
                     {errors.phone&&<p className="text-[13px] text-red-500">{errors.phone}</p>}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-[10px] gap-y-[15px]">
@@ -116,10 +116,6 @@ export default function Register(){
                     </div>
                     <input onChange={handleChange} value={form.email} type="text" name="email" placeholder="Email Address" autoComplete="email" className="p-[10px] border rounded-[5px] w-full" />
                     {errors.email&&<p className="text-[13px] text-red-500">{errors.email}</p>}
-                    {/**<label className="flex gap-[8px] my-[5px] text-[14px] leading-none">
-                        <input type="checkbox"/>
-                        Keep me up-to-date with offers by email
-                    </label>**/}
                     {errors.error&& <p className="text-[13px] text-red-500">{errors.error}</p>}
                     {errors.err&&<p className="text-[13px] text-red-500">{errors.err}</p>}
                     <button type="submit" className="bg-black text-[#fff] text-[17.5px] font-semibold p-[10px] rounded-[5px]">Register</button>

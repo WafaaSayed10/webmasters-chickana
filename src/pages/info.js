@@ -13,18 +13,7 @@ import { MdPayment } from "react-icons/md";
 
 export default function Info(){
     const pathname= usePathname()
-    const {data}=useMenu()
-    const [ setOpenCategories] = useState({});
     const {cart, removeFromCart, total} = useCart()
-    useEffect(() => {
-        if (data) {
-            const initialState = {};
-            data.forEach(cat => {
-                initialState[cat.category] = true;
-            });
-            setOpenCategories(initialState);
-        }
-    }, [data]);
     const router = useRouter();
     const checkout=()=>{
         if(cart.length>0){

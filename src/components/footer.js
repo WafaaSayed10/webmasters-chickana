@@ -23,8 +23,8 @@ export default function Footer(){
                     <div className="flex flex-col">
                         <h3 className="text-[15px] font-semibold uppercase mb-[10px]">Follow us on</h3>
                         <div className="flex gap-[20px]">
-                            <a href="/" className="text-[14px]"><FaFacebookF /></a>
-                            <a href="/" className="text-[14px]"><FaInstagram /></a>
+                            <a href="https://www.facebook.com/ChickanaEgypt" className="text-[14px]"><FaFacebookF /></a>
+                            <a href="https://www.instagram.com/feteera/#" className="text-[14px]"><FaInstagram /></a>
                         </div>
                     </div>
                     <div className="flex flex-col">

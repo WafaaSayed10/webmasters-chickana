@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { FiMinus } from "react-icons/fi";
 import clsx from "clsx";
 import Head from "next/head"
+import { IoIosClose } from "react-icons/io";
 
 export default function Cart(){
     const {cart, removeFromCart, total} = useCart()
