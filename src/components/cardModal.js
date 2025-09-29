@@ -32,7 +32,7 @@ export default function CardModal({item, onClose}){
             0
         );
         setSubTotal((Number(item.newPrice)+totalExtras)*numOfItems)
-    }, [selectedOptions, numOfItems]);
+    }, [selectedOptions, numOfItems, item.newPrice]);
     
     const addToOrder=()=>{
         const selectedCount = Object.keys(selectedOptions).length;
