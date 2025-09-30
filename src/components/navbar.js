@@ -34,6 +34,7 @@ export default function Navbar(){
         await signOut(auth);
         setUser('')
         router.push('/login');
+        closeMenu()
     };
     return(
         <>
@@ -63,16 +64,16 @@ export default function Navbar(){
         </header>
         {menuOpen&&(<div className="md:hidden bg-[#fff] px-[20px] py-[10px]">
             <div className="flex flex-col gap-4 w-fit">
-                <Link href="/" onClick={closeMenu} className={clsx("relative hover:text-[#50c5ff] transition-colors duration-300 group",pathname === "/" ? "text-[#50c5ff]" : "")}>Home</Link>
-                <Link href="/menu" onClick={closeMenu} className={clsx("relative hover:text-[#50c5ff] transition-colors duration-300 group", pathname === "/menu" ? "text-[#50c5ff]":"")}>Menu</Link>
-                <Link href="/about" onClick={closeMenu} className={clsx("relative hover:text-[#50c5ff] transition-colors duration-300 group", pathname === "/about" ?"text-[#50c5ff]" :"")}>About</Link>
-                <Link href="/contact" onClick={closeMenu} className={clsx("relative hover:text-[#50c5ff] transition-colors duration-300 group", pathname === "/contact"? "text-[#50c5ff]" : "")}>Contact</Link>
-                {user&&<Link href="/orders" className={clsx("relative hover:text-[#d95a31] transition-colors duration-300 group", pathname === "/orders"? "text-[#d95a31]" : "")}>Orders<span className={clsx("absolute left-0 -bottom-1 w-0 transition-all duration-300 h-[2px] group-hover:w-full group-hover:bg-[#d95a31]",pathname === "/orders" ? "bg-[#d95a31] w-full":"bg-[black]")}></span></Link>}
+                <Link href="/" onClick={closeMenu} className={clsx("relative hover:text-[#d95a31] transition-colors duration-300 group",pathname === "/" ? "text-[#d95a31]" : "")}>Home</Link>
+                <Link href="/menu" onClick={closeMenu} className={clsx("relative hover:text-[#d95a31] transition-colors duration-300 group", pathname === "/menu" ? "text-[#d95a31]":"")}>Menu</Link>
+                <Link href="/about" onClick={closeMenu} className={clsx("relative hover:text-[#d95a31] transition-colors duration-300 group", pathname === "/about" ?"text-[#d95a31]" :"")}>About</Link>
+                <Link href="/contact" onClick={closeMenu} className={clsx("relative hover:text-[#d95a31] transition-colors duration-300 group", pathname === "/contact"? "text-[#d95a31]" : "")}>Contact</Link>
+                {user&&<Link href="/orders" onClick={closeMenu} className={clsx("relative hover:text-[#d95a31] transition-colors duration-300 group", pathname === "/orders"? "text-[#d95a31]" : "")}>Orders</Link>}
                     {user?
                     <span onClick={handleLogout} className="cursor-pointer relative hover:text-[#d95a31] transition-colors duration-300 group text-gray-400 text-[14px]" >Logout</span>
-                    :<Link href="/login" className={clsx("relative hover:text-[#d95a31] transition-colors duration-300 group", pathname === "/login"? "text-[#d95a31]" : "")}>Login<span className={clsx("absolute left-0 -bottom-1 w-0 transition-all duration-300 h-[2px] group-hover:w-full group-hover:bg-[#d95a31]",pathname === "/login" ? "bg-[#d95a31] w-full":"bg-[black]")}></span></Link>
+                    :<Link href="/login" onClick={closeMenu} className={clsx("relative hover:text-[#d95a31] transition-colors duration-300 group", pathname === "/login"? "text-[#d95a31]" : "")}>Login<span className={clsx("absolute left-0 -bottom-1 w-0 transition-all duration-300 h-[2px] group-hover:w-full group-hover:bg-[#d95a31]",pathname === "/login" ? "bg-[#d95a31] w-full":"bg-[black]")}></span></Link>
                 }
-                <Link href="/cart" onClick={closeMenu} className={clsx("relative hover:text-[#50c5ff] transition-colors duration-300 group", pathname === "/cart"? "text-[#50c5ff]" : "")}><BsBagDash className={clsx("text-[25px] mt-[10px] cursor-pointer")} /></Link>
+                <Link href="/cart" onClick={closeMenu} className={clsx("relative hover:text-[#d95a31] transition-colors duration-300 group", pathname === "/cart"? "text-[#d95a31]" : "")}><BsBagDash className={clsx("text-[25px] mt-[10px] cursor-pointer")} /></Link>
             </div>
         </div>)}
         </>

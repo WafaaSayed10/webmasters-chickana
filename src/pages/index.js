@@ -29,7 +29,7 @@ export default function Home() {
         <meta property="og:title" content="chickana resturant" />
         <meta property="og:description" content="chickana double ds resturant" />
         <meta property="og:image" content="/images/thumb_803_0_0_contain_48a4b15e.jpg" />
-        <meta property="og:url" content="http://localhost:3000" />
+        <meta property="og:url" content="http://webmasters-chickana-oyxc.vercel.app" />
         <meta property="og:type" content="website" />
       </Head>
       <main className="bg-gray-100">
